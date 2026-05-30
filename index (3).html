@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PondyPainters - Coastal Painting & Waterproofing Experts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #fd761a;
+            --primary-brown: #9d4300;
+            --dark-navy: #131b2e;
+            --light-gray: #f7f9fb;
+            --white: #ffffff;
+            --text-dark: #191c1e;
+            --text-gray: #45464d;
+            --text-light: #6b7280;
+            --yellow-accent: #eaff00;
+            --green-whatsapp: #25d366;
+            --border-light: rgba(255, 255, 255, 0.1);
+            --shadow-sm: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--light-gray);
+            overflow-x: hidden;
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            background: rgba(247, 249, 251, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-nav {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 24px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 36px;
+            color: #190553;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            width: 24px;
+            height: 28.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-gray);
+            transition: color 0.3s ease;
+            letter-spacing: 0.8px;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-brown);
+            border-bottom: 2px solid var(--primary-brown);
+            padding-bottom: 2px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .cta-button {
+            background: var(--primary-orange);
+            color: var(--white);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cta-button:hover {
+            background: #ff8c42;
+            transform: translateY(-2px);
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
+                        url('https://www.figma.com/api/mcp/asset/70284e4b-61dd-4a0f-87f9-ee567ded13b8');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 80px;
+            margin-top: 114px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 896px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', serif;
+            font-size: 84px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 40px;
+            letter-spacing: -1.68px;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 24px;
+            line-height: 1.6;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .contractor-name {
+            font-family: 'Inknut Antiqua', serif;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 24px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: var(--white);
+            padding: 21.5px 40px 22.5px;
+            border-radius: 9999px;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #ff8c42;
+            transform: translateY(-4px);
+            box-shadow: 0px 25px 35px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 22px 42px;
+            border: 2px solid var(--white);
+            border-radius: 9999px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            backdrop-filter: blur(2px);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 64px;
+        }
+
+        .stat-card {
+            backdrop-filter: blur(6px);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-card img {
+            width: 25px;
+            height: auto;
+        }
+
+        .stat-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            line-height: 1.5;
+        }
+
+        /* ==================== ACHIEVEMENTS COUNTER ==================== */
+        .achievements {
+            background: var(--dark-navy);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 97px 80px;
+        }
+
+        .achievements-grid {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            text-align: center;
+            color: var(--yellow-accent);
+        }
+
+        .achievement-item h3 {
+            font-size: 80px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .achievement-item p {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        /* ==================== LIMITED OFFER BANNER ==================== */
+        .limited-offer {
+            background: var(--light-gray);
+            padding: 80px;
+            margin: 0 auto;
+            max-width: 1440px;
+        }
+
+        .offer-card {
+            backdrop-filter: blur(12px);
+            background: rgba(19, 27, 46, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 56px;
+            padding: 65px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 96px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            right: -128px;
+            top: -128px;
+            width: 320px;
+            height: 320px;
+            background: rgba(157, 67, 0, 0.2);
+            border-radius: 50%;
+            filter: blur(50px);
+        }
+
+        .offer-tag {
+            background: var(--primary-brown);
+            color: var(--white);
+            display: inline-block;
+            padding: 6.5px 24px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            margin-bottom: 16px;
+        }
+
+        .offer-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.25;
+            margin-bottom: 24px;
+        }
+
+        .offer-description {
+            font-size: 20px;
+            color: var(--white);
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 48px;
+        }
+
+        .offer-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 23.5px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-offer {
+            background: var(--primary-orange);
+            color: var(--white);
+            border: none;
+            padding: 24px 73.25px;
+            border-radius: 9999px;
+            font-size: 24px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-offer:hover {
+            background: #ff8c42;
+            transform: translateY(-4px);
+        }
+
+        .offer-timer {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            color: #ffb690;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .offer-timer img {
+            width: 17.75px;
+            height: 16.375px;
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        .about {
+            padding: 160px 80px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 96px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: 'Montserrat', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.25;
+            margin-bottom: 40px;
+            letter-spacing: -0.56px;
+        }
+
+        .about-label {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--primary-brown);
+            text-transform: uppercase;
+            letter-spacing: 3.6px;
+            margin-bottom: 24px;
+        }
+
+        .about-text {
+            font-size: 20px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 32px;
+            text-align: justify;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 511.5px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .feature-box {
+            background: #e6e8ea;
+            padding: 24px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .feature-box img {
+            width: 32px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .feature-box h4 {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 32px;
+            padding: 33px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .badge-content {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .badge-icon {
+            width: 67.512px;
+            height: 65px;
+        }
+
+        .badge-text h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .badge-text p {
+            font-size: 16px;
+            color: var(--text-dark);
+            opacity: 0.7;
+        }
+
+        /* ==================== WHY CHOOSE US ==================== */
+        .why-choose {
+            padding: 160px 80px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 96px;
+            align-items: center;
+        }
+
+        .why-content h2 {
+            font-family: 'Montserrat', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.25;
+            margin-bottom: 48px;
+            letter-spacing: -0.56px;
+        }
+
+        .why-features {
+            display: grid;
+            gap: 32px;
+        }
+
+        .why-feature {
+            display: flex;
+            gap: 24px;
+        }
+
+        .why-feature-icon {
+            flex-shrink: 0;
+            width: 32.3px;
+            height: 28.025px;
+        }
+
+        .why-feature h4 {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .why-feature p {
+            font-size: 18px;
+            color: var(--text-dark);
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        .why-image {
+            position: relative;
+            border-radius: 48px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 600px;
+        }
+
+        .why-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .why-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 64px;
+            color: var(--white);
+        }
+
+        .why-quote {
+            font-family: 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            font-style: italic;
+            line-height: 1.25;
+            margin-right: 50.2px;
+        }
+
+        /* ==================== TESTIMONIALS ==================== */
+        .testimonials {
+            background: var(--light-gray);
+            padding: 160px 80px;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .testimonials-header h2 {
+            font-family: 'Montserrat', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.56px;
+        }
+
+        .testimonials-grid {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            padding: 41px;
+            box-shadow: 0px 4px 20px 0px rgba(15, 23, 42, 0.05);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-stars img {
+            width: 25px;
+            height: 23.75px;
+        }
+
+        .testimonial-text {
+            font-size: 20px;
+            color: var(--text-gray);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding-bottom: 25px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 9999px;
+            background: #eceef0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .author-info h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-dark);
+            opacity: 0.6;
+        }
+
+        /* ==================== CONTACT FORM SECTION ==================== */
+        .contact-section {
+            background: var(--dark-navy);
+            padding: 160px 80px;
+        }
+
+        .contact-grid {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 96px;
+        }
+
+        .contact-left h2 {
+            font-family: 'Montserrat', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.25;
+            margin-bottom: 40px;
+            letter-spacing: -0.56px;
+        }
+
+        .contact-description {
+            font-size: 20px;
+            color: var(--white);
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .contact-link {
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            padding: 32px;
+            border-radius: 24px;
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(8px);
+        }
+
+        .contact-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-phone .contact-icon {
+            background: var(--primary-brown);
+        }
+
+        .contact-whatsapp .contact-icon {
+            background: var(--green-whatsapp);
+        }
+
+        .contact-info h3 {
+            font-size: 16px;
+            color: var(--white);
+            opacity: 0.6;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .contact-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        /* ==================== FORM SECTION ==================== */
+        .form-card {
+            background: var(--white);
+            border-radius: 40px;
+            padding: 48px;
+            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            inset: 0 0.5px -0.5px 0;
+            border-radius: 40px;
+            background: transparent;
+            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+            pointer-events: none;
+        }
+
+        .form-card h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8.5px;
+        }
+
+        .form-field.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            opacity: 0.6;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            background: #f2f4f6;
+            border: none;
+            padding: 19px 16px 20px;
+            border-radius: 16px;
+            font-size: 18px;
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-input::placeholder,
+        .form-select::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-light);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            background: #e8eaed;
+            border-bottom: 2px solid var(--primary-orange);
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 20L3.5 10H23.5L13.5 20Z' fill='%23191c1e'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 50px;
+        }
+
+        .form-textarea {
+            resize: none;
+            min-height: 120px;
+            grid-column: 1 / -1;
+        }
+
+        .form-submit {
+            background: var(--primary-orange);
+            color: var(--white);
+            border: none;
+            padding: 24px;
+            border-radius: 16px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-top: 8px;
+        }
+
+        .form-submit:hover {
+            background: #ff8c42;
+            transform: translateY(-2px);
+            box-shadow: 0px 15px 20px -3px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ==================== PROJECT CAROUSEL ==================== */
+        .carousel-section {
+            background: var(--light-gray);
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            display: flex;
+            gap: 32px;
+            animation: scroll 30s linear infinite;
+            width: max-content;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .carousel-item {
+            background: rgba(255, 255, 255, 0);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            flex: 0 0 350px;
+            height: 450px;
+            position: relative;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 24px;
+            color: var(--white);
+        }
+
+        .carousel-label {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--dark-navy);
+            padding: 96px 80px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--yellow-accent);
+            margin-bottom: 32px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            letter-spacing: 0.9px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 20px;
+        }
+
+        /* ==================== SIDE BUTTONS ==================== */
+        .side-buttons {
+            position: fixed;
+            right: 48px;
+            bottom: 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            z-index: 999;
+        }
+
+        .side-button {
+            width: 64px;
+            height: 64px;
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .side-button img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .btn-whatsapp {
+            background: var(--primary-brown);
+            color: var(--white);
+        }
+
+        .btn-call {
+            background: #001e2c;
+            color: var(--white);
+        }
+
+        .side-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 30px 60px -12px rgba(0, 0, 0, 0.3);
+        }
+
+        .side-tooltip {
+            position: absolute;
+            background: #000;
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            white-space: nowrap;
+            right: 80px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .side-button:hover .side-tooltip {
+            opacity: 1;
+        }
+
+        /* ==================== SUCCESS MESSAGE ==================== */
+        .message {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            z-index: 2000;
+            animation: slideInRight 0.5s ease-out;
+            display: none;
+        }
+
+        .message.success {
+            background: #10b981;
+            color: var(--white);
+            display: block;
+        }
+
+        .message.error {
+            background: #ef4444;
+            color: var(--white);
+            display: block;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .header-nav {
+                padding: 16px 24px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 0 24px;
+                margin-top: 80px;
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+                margin-bottom: 24px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr 1fr;
+                padding: 60px 24px;
+                gap: 24px;
+            }
+
+            .achievement-item h3 {
+                font-size: 48px;
+            }
+
+            .limited-offer {
+                padding: 40px 24px;
+            }
+
+            .offer-card {
+                grid-template-columns: 1fr;
+                padding: 40px;
+                gap: 32px;
+            }
+
+            .about-grid,
+            .why-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                padding: 0 24px;
+            }
+
+            .about-content h2,
+            .why-content h2,
+            .contact-left h2 {
+                font-size: 36px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                padding: 0 24px;
+            }
+
+            .form-group {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .side-buttons {
+                right: 16px;
+                bottom: 16px;
+                flex-direction: row;
+            }
+
+            .side-tooltip {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- MESSAGE CONTAINER -->
+    <div id="successMessage" class="message success"></div>
+    <div id="errorMessage" class="message error"></div>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="header-nav">
+            <a href="#" class="logo">
+                <span>🎨</span>
+                <span>PondyPainters</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta-button" onclick="document.querySelector('#leadsForm').scrollIntoView();">Get Free Quote</button>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Bringing Colour, Protection & Life To Every Building.</h1>
+            
+            <div class="contractor-name">ILANGOVAN . S (Contractor 25 years of Experience)</div>
+            
+            <p class="subtitle">25+ years of trusted painting and waterproofing experience in Pondicherry. We combine coastal elegance with structural durability.</p>
+            
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="document.querySelector('#leadsForm').scrollIntoView();">Get Free Site Visit</button>
+                <button class="btn-secondary" onclick="document.querySelector('#projects').scrollIntoView();">View Our Projects</button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-label">25+ YEARS<br>EXPERIENCE</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-label">300+<br>BUILDINGS</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-label">ASIAN PAINTS<br>RATED</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-label">EXPERT<br>WORKERS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="achievements">
+        <div class="achievements-grid">
+            <div class="achievement-item">
+                <h3>300+</h3>
+                <p>Buildings Completed</p>
+            </div>
+            <div class="achievement-item">
+                <h3>25+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="achievement-item">
+                <h3>100+</h3>
+                <p>Client Satisfaction</p>
+            </div>
+            <div class="achievement-item">
+                <h3>4.9/5</h3>
+                <p>Asian Paints Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIMITED OFFER BANNER -->
+    <section class="limited-offer">
+        <div class="offer-card">
+            <div class="offer-content">
+                <span class="offer-tag">Limited Offer</span>
+                <h2>Book A ₹99 Expert Site Inspection</h2>
+                <p class="offer-description">Stop guessing. Get a precise damage assessment, material estimation, and final quote from our experts. Limited slots available every week!</p>
+            </div>
+            <div class="offer-actions">
+                <button class="btn-offer" onclick="window.open('https://payments.cashfree.com/forms/getaudit', '_blank');">Claim Your Audit Now</button>
+                <div class="offer-timer">
+                    <span>🔥 4 Slots Remaining This Week</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-content">
+                <span class="about-label">Our Legacy</span>
+                <h2>25 Years of Excellence in Coastal Preservation.</h2>
+                <p class="about-text">Founded in the heart of Pondicherry, PondyPainters has grown from a local family-run business into the city's most trusted name for high-end residential and commercial finishes. We understand the unique challenges of coastal architecture—from salt-air corrosion to heavy monsoon rains.</p>
+                <p class="about-text" style="opacity: 0.8;">Our team uses exclusively premium materials, combined with time-tested techniques and modern technology, to ensure your building doesn't just look beautiful today, but stays protected for decades.</p>
+                
+                <div class="about-features">
+                    <div class="feature-box">
+                        <img src="data:image/svg+xml,%3Csvg width='32' height='40' viewBox='0 0 32 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='8' fill='%239d4300'/%3E%3C/svg%3E" alt="Quality">
+                        <h4>Certified Quality</h4>
+                    </div>
+                    <div class="feature-box">
+                        <img src="data:image/svg+xml,%3Csvg width='36' height='42' viewBox='0 0 36 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='8' width='32' height='24' fill='%239d4300'/%3E%3C/svg%3E" alt="Delivery">
+                        <h4>On-Time Delivery</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-image">
+                <img src="https://www.figma.com/api/mcp/asset/553e3c96-55e2-458d-8c66-24d3948bb2d0" alt="About PondyPainters">
+                <div class="about-badge">
+                    <div class="badge-content">
+                        <div class="badge-icon">
+                            <img src="data:image/svg+xml,%3Csvg width='67' height='65' viewBox='0 0 67 65' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='33' cy='33' r='30' fill='%239d4300' opacity='0.1'/%3E%3Ccircle cx='33' cy='33' r='25' fill='%239d4300'/%3E%3C/svg%3E" alt="Badge">
+                        </div>
+                        <div class="badge-text">
+                            <h4>Trusted by 1000+ Owners</h4>
+                            <p>Across Pondicherry & Auroville</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-choose" id="why">
+        <div class="why-grid">
+            <div class="why-content">
+                <h2>Why PondyPainters?</h2>
+                
+                <div class="why-features">
+                    <div class="why-feature">
+                        <div class="why-feature-icon">✓</div>
+                        <div>
+                            <h4>Achivement Award By AsianPaints</h4>
+                            <p>Trained professionals with decades of specific site experience across the region.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature">
+                        <div class="why-feature-icon">✓</div>
+                        <div>
+                            <h4>Premium Materials</h4>
+                            <p>Exclusively using Asian Paints, Berger, and specialized waterproofing agents.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature">
+                        <div class="why-feature-icon">✓</div>
+                        <div>
+                            <h4>Affordable Pricing</h4>
+                            <p>Transparent quotes with no hidden costs. Value for every rupee spent.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature">
+                        <div class="why-feature-icon">✓</div>
+                        <div>
+                            <h4>Long Lasting Finish</h4>
+                            <p>Our coatings are designed to withstand salt-air and heavy monsoons.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature">
+                        <div class="why-feature-icon">✓</div>
+                        <div>
+                            <h4>On-Time Completion</h4>
+                            <p>Strict adherence to project timelines to respect your busy schedule.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-image">
+                <img src="https://www.figma.com/api/mcp/asset/535fc5cb-50e1-4198-af2d-24472a6e182d" alt="Why Choose Us">
+                <div class="why-overlay">
+                    <div class="why-quote">"Quality is the only thing that lasts."</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECT CAROUSEL -->
+    <section class="carousel-section" id="projects">
+        <div class="carousel-container">
+            <div class="carousel-item">
+                <img src="https://www.figma.com/api/mcp/asset/434c0666-7348-4840-b8b3-04e8d0051377" alt="Project 1">
+                <div class="carousel-overlay">
+                    <div class="carousel-label">Exterior Transformation</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.figma.com/api/mcp/asset/5fc6e784-86b7-4185-99ab-e971058db30d" alt="Project 2">
+                <div class="carousel-overlay">
+                    <div class="carousel-label">Terrace Waterproofing</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.figma.com/api/mcp/asset/02f83465-a3c1-4ec5-bc24-5ab9560228f8" alt="Project 3">
+                <div class="carousel-overlay">
+                    <div class="carousel-label">Modern Interiors</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.figma.com/api/mcp/asset/b2956b52-3a8d-44a5-bc9c-142d519cf4e9" alt="Project 4">
+                <div class="carousel-overlay">
+                    <div class="carousel-label">Exterior Painting</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.figma.com/api/mcp/asset/d8f05935-b37e-4707-b86d-ba8aefc224d6" alt="Project 5">
+                <div class="carousel-overlay">
+                    <div class="carousel-label">Commercial Complex</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <h2>What Our Clients Say</h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span>⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="testimonial-text">
+                    "PondyPainters did an amazing job on our heritage home. The attention to detail and choice of colors was perfect for the French Quarter aesthetic."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SJ</div>
+                    <div class="author-info">
+                        <h4>Suresh Jayaram</h4>
+                        <p>Villinuar, pondicherry</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span>⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="testimonial-text">
+                    "The waterproofing solution they provided for our terrace has been flawless through two monsoons. Highly recommend their expert team."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MK</div>
+                    <div class="author-info">
+                        <h4>Meera Krishnan</h4>
+                        <p>Ariyakuppam, Pondy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span>⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="testimonial-text">
+                    "Very professional approach. They finished the commercial complex painting ahead of schedule with zero mess. Very impressed with the cleanup."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RV</div>
+                    <div class="author-info">
+                        <h4>Rajesh V.</h4>
+                        <p>mutharilarpet, pondy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="contact-grid">
+            <div class="contact-left">
+                <h2>Ready to Transform Your Building?</h2>
+                <p class="contact-description">Contact our experts today for a free quote or book your ₹99 detailed site audit.</p>
+                
+                <div class="contact-links">
+                    <a href="tel:+919843926867" class="contact-link contact-phone">
+                        <div class="contact-icon">
+                            <span>📞</span>
+                        </div>
+                        <div>
+                            <h3>Call Us Anytime</h3>
+                            <div class="contact-value">+91 9843926867</div>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/919843926867" class="contact-link contact-whatsapp">
+                        <div class="contact-icon">
+                            <span>💬</span>
+                        </div>
+                        <div>
+                            <h3>WhatsApp Support</h3>
+                            <div class="contact-value">Chat with our Experts</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="form-card">
+                <h3>Get Free Quote</h3>
+                <form id="leadsForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <div class="form-field">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-input" id="fullName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-input" id="phoneNumber" placeholder="+91" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-field full">
+                            <label class="form-label">Location (Area in Pondy)</label>
+                            <input type="text" class="form-input" id="location" placeholder="e.g., White Town, Lawspet" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-field full">
+                            <label class="form-label">Service Needed</label>
+                            <select class="form-select" id="serviceNeeded" required>
+                                <option value="">Select a service</option>
+                                <option value="Exterior Painting">Exterior Painting</option>
+                                <option value="Interior Painting">Interior Painting</option>
+                                <option value="Waterproofing">Waterproofing</option>
+                                <option value="Maintenance">Maintenance</option>
+                                <option value="Commercial Painting">Commercial Painting</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-field full">
+                            <label class="form-label">Your Message</label>
+                            <textarea class="form-textarea" id="message" placeholder="Tell us about your project"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="form-submit">Send Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">PondyPainters</div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#why">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-copyright">
+                © 2024 PondyPainters. Structural Integrity meets Coastal Elegance.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SIDE BUTTONS -->
+    <div class="side-buttons">
+        <button class="side-button btn-whatsapp" onclick="window.open('https://wa.me/919843926867', '_blank');">
+            <span>💬</span>
+            <span class="side-tooltip">WhatsApp Us</span>
+        </button>
+        <button class="side-button btn-call" onclick="window.open('tel:+919843926867');">
+            <span>📞</span>
+            <span class="side-tooltip">Call Now</span>
+        </button>
+    </div>
+
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzdCmBPKYVjKH0ScxBi-i_-GA7ac4okt2zORh5nxxUvGKH1KQPz2FgKaUBhZ5GHvoaC/exec';
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const fullName = document.getElementById('fullName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const location = document.getElementById('location').value;
+            const serviceNeeded = document.getElementById('serviceNeeded').value;
+            const message = document.getElementById('message').value;
+
+            // Validate inputs
+            if (!fullName || !phoneNumber || !location || !serviceNeeded) {
+                showErrorMessage('Please fill in all required fields');
+                return;
+            }
+
+            // Disable button during submission
+            const submitBtn = form.querySelector('.form-submit');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Create URL parameters
+            const params = new URLSearchParams({
+                name: fullName,
+                phone: phoneNumber,
+                location: location,
+                service: serviceNeeded,
+                message: message
+            });
+
+            const url = SCRIPT_URL + '?' + params.toString();
+
+            // Use fetch with no-cors mode
+            fetch(url, {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(() => {
+                showSuccessMessage('Lead saved successfully! We will contact you soon.');
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Request';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                showErrorMessage('Error submitting form. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Request';
+            });
+        }
+
+        function showSuccessMessage(message) {
+            const messageEl = document.getElementById('successMessage');
+            messageEl.textContent = message;
+            messageEl.style.display = 'block';
+            
+            setTimeout(() => {
+                messageEl.style.display = 'none';
+            }, 5000);
+        }
+
+        function showErrorMessage(message) {
+            const messageEl = document.getElementById('errorMessage');
+            messageEl.textContent = message;
+            messageEl.style.display = 'block';
+            
+            setTimeout(() => {
+                messageEl.style.display = 'none';
+            }, 5000);
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
