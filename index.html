@@ -77,11 +77,6 @@
             transform: scale(1.05);
         }
 
-        .logo img {
-            width: 24px;
-            height: 28.5px;
-        }
-
         .nav-links {
             display: flex;
             gap: 40px;
@@ -255,11 +250,6 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        .stat-card img {
-            width: 25px;
-            height: auto;
-        }
-
         .stat-content {
             display: flex;
             flex-direction: column;
@@ -406,11 +396,6 @@
             font-size: 18px;
         }
 
-        .offer-timer img {
-            width: 17.75px;
-            height: 16.375px;
-        }
-
         /* ==================== ABOUT SECTION ==================== */
         .about {
             padding: 160px 80px;
@@ -480,12 +465,18 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+            align-items: flex-start;
         }
 
-        .feature-box img {
+        .feature-box::before {
+            content: '✓';
+            display: inline-block;
             width: 32px;
             height: 40px;
-            object-fit: contain;
+            font-size: 32px;
+            line-height: 40px;
+            color: var(--primary-brown);
+            font-weight: bold;
         }
 
         .feature-box h4 {
@@ -515,6 +506,11 @@
         .badge-icon {
             width: 67.512px;
             height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            flex-shrink: 0;
         }
 
         .badge-text h4 {
@@ -568,6 +564,8 @@
             flex-shrink: 0;
             width: 32.3px;
             height: 28.025px;
+            font-size: 24px;
+            line-height: 28px;
         }
 
         .why-feature h4 {
@@ -657,11 +655,6 @@
             display: flex;
             gap: 4px;
             margin-bottom: 24px;
-        }
-
-        .testimonial-stars img {
-            width: 25px;
-            height: 23.75px;
         }
 
         .testimonial-text {
@@ -769,6 +762,7 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            font-size: 28px;
         }
 
         .contact-phone .contact-icon {
@@ -920,20 +914,20 @@
             overflow: hidden;
         }
 
+        .carousel-wrapper {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 80px;
+            position: relative;
+        }
+
         .carousel-container {
             display: flex;
             gap: 32px;
-            animation: scroll 30s linear infinite;
-            width: max-content;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+            overflow: hidden;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            position: relative;
         }
 
         .carousel-item {
@@ -944,6 +938,17 @@
             flex: 0 0 350px;
             height: 450px;
             position: relative;
+            scroll-snap-align: start;
+            transition: transform 0.3s ease;
+            cursor: grab;
+        }
+
+        .carousel-item:hover {
+            transform: scale(1.02);
+        }
+
+        .carousel-item:active {
+            cursor: grabbing;
         }
 
         .carousel-item img {
@@ -965,6 +970,98 @@
         .carousel-label {
             font-size: 18px;
             font-weight: 400;
+        }
+
+        /* CAROUSEL NAVIGATION */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            pointer-events: none;
+        }
+
+        .carousel-button {
+            pointer-events: all;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 9999px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            font-size: 24px;
+            color: var(--text-dark);
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background: var(--primary-orange);
+            color: var(--white);
+            transform: scale(1.1);
+            box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+
+        .carousel-button:disabled:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* CAROUSEL INDICATORS */
+        .carousel-indicators {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--primary-orange);
+            width: 32px;
+            border-radius: 6px;
+        }
+
+        .indicator:hover {
+            background: var(--primary-brown);
+        }
+
+        /* CAROUSEL INFO */
+        .carousel-info {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .carousel-info span {
+            color: var(--primary-orange);
+            font-weight: 700;
         }
 
         /* ==================== FOOTER ==================== */
@@ -1036,11 +1133,7 @@
             transition: all 0.3s ease;
             box-shadow: var(--shadow-lg);
             position: relative;
-        }
-
-        .side-button img {
-            width: 25px;
-            height: 25px;
+            font-size: 28px;
         }
 
         .btn-whatsapp {
@@ -1147,19 +1240,12 @@
                 font-size: 14px;
             }
 
-            /* HEADER */
-            header {
-                padding: 0;
-            }
-
             .header-nav {
                 padding: 12px 16px;
-                gap: 12px;
             }
 
             .logo {
                 font-size: 24px;
-                gap: 8px;
             }
 
             .nav-links {
@@ -1169,10 +1255,8 @@
             .cta-button {
                 padding: 10px 20px;
                 font-size: 12px;
-                border-radius: 20px;
             }
 
-            /* HERO SECTION */
             .hero {
                 padding: 0 16px;
                 margin-top: 60px;
@@ -1180,32 +1264,14 @@
                 background-attachment: scroll;
             }
 
-            .hero-content {
-                max-width: 100%;
-            }
-
             .hero h1 {
                 font-size: 32px;
-                line-height: 1.2;
                 margin-bottom: 16px;
-                letter-spacing: -0.64px;
-            }
-
-            .hero .subtitle {
-                font-size: 14px;
-                margin-bottom: 16px;
-                line-height: 1.4;
-            }
-
-            .hero .contractor-name {
-                font-size: 14px;
-                margin-bottom: 12px;
             }
 
             .hero-buttons {
                 flex-direction: column;
                 gap: 12px;
-                margin-top: 24px;
             }
 
             .btn-primary,
@@ -1213,11 +1279,6 @@
                 width: 100%;
                 padding: 14px 20px;
                 font-size: 14px;
-                border-radius: 8px;
-            }
-
-            .btn-secondary {
-                padding: 14px 20px;
             }
 
             .hero-stats {
@@ -1226,105 +1287,34 @@
                 margin-top: 32px;
             }
 
-            .stat-card {
-                padding: 12px;
-                border-radius: 12px;
-                gap: 8px;
-            }
-
-            .stat-label {
-                font-size: 11px;
-                letter-spacing: 0.5px;
-                line-height: 1.3;
-            }
-
-            /* ACHIEVEMENTS */
             .achievements {
                 padding: 40px 16px;
-                border-top: none;
-                border-bottom: none;
             }
 
             .achievements-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 16px;
-                max-width: 100%;
             }
 
             .achievement-item h3 {
                 font-size: 36px;
-                margin-bottom: 4px;
             }
 
-            .achievement-item p {
-                font-size: 12px;
-                letter-spacing: 1px;
-                line-height: 1.3;
-            }
-
-            /* LIMITED OFFER */
             .limited-offer {
                 padding: 24px 16px;
-                margin: 0;
-                max-width: 100%;
             }
 
             .offer-card {
                 grid-template-columns: 1fr;
                 padding: 24px;
                 gap: 20px;
-                border-radius: 24px;
-            }
-
-            .offer-card::before {
-                width: 200px;
-                height: 200px;
-                right: -80px;
-                top: -80px;
-            }
-
-            .offer-tag {
-                padding: 5px 16px;
-                font-size: 11px;
-                margin-bottom: 12px;
             }
 
             .offer-content h2 {
                 font-size: 28px;
-                line-height: 1.2;
-                margin-bottom: 12px;
             }
 
-            .offer-description {
-                font-size: 14px;
-                line-height: 1.5;
-                margin-bottom: 24px;
-            }
-
-            .offer-actions {
-                gap: 16px;
-            }
-
-            .btn-offer {
-                padding: 14px 32px;
-                font-size: 14px;
-                border-radius: 8px;
-            }
-
-            .offer-timer {
-                font-size: 13px;
-                gap: 8px;
-            }
-
-            .offer-timer img {
-                width: 14px;
-                height: 13px;
-            }
-
-            /* ABOUT SECTION */
             .about {
                 padding: 40px 16px;
-                max-width: 100%;
             }
 
             .about-grid {
@@ -1334,77 +1324,28 @@
 
             .about-content h2 {
                 font-size: 28px;
-                line-height: 1.2;
-                margin-bottom: 20px;
-            }
-
-            .about-label {
-                font-size: 12px;
-                letter-spacing: 2px;
-                margin-bottom: 12px;
-            }
-
-            .about-text {
-                font-size: 14px;
-                line-height: 1.5;
-                margin-bottom: 16px;
-                text-align: left;
             }
 
             .about-image {
                 height: 300px;
-                border-radius: 24px;
             }
 
             .about-features {
                 grid-template-columns: 1fr;
-                gap: 12px;
-                margin-top: 20px;
-            }
-
-            .feature-box {
-                padding: 16px;
-                border-radius: 12px;
-                gap: 12px;
-            }
-
-            .feature-box img {
-                width: 24px;
-                height: 30px;
-            }
-
-            .feature-box h4 {
-                font-size: 14px;
             }
 
             .about-badge {
                 bottom: -20px;
                 left: -20px;
                 padding: 16px;
-                border-radius: 20px;
-            }
-
-            .badge-content {
-                gap: 12px;
             }
 
             .badge-icon {
-                width: 40px;
-                height: 40px;
+                font-size: 28px;
             }
 
-            .badge-text h4 {
-                font-size: 14px;
-            }
-
-            .badge-text p {
-                font-size: 12px;
-            }
-
-            /* WHY CHOOSE US */
             .why-choose {
                 padding: 40px 16px;
-                max-width: 100%;
             }
 
             .why-grid {
@@ -1414,115 +1355,31 @@
 
             .why-content h2 {
                 font-size: 28px;
-                line-height: 1.2;
-                margin-bottom: 24px;
             }
 
-            .why-features {
-                gap: 20px;
-            }
-
-            .why-feature {
-                gap: 12px;
-            }
-
-            .why-feature-icon {
-                width: 20px;
-                height: 20px;
-                font-size: 18px;
-            }
-
-            .why-feature h4 {
-                font-size: 14px;
-                margin-bottom: 4px;
-            }
-
-            .why-feature p {
-                font-size: 13px;
-                line-height: 1.4;
-            }
-
-            .why-image {
-                height: 350px;
-                border-radius: 24px;
-            }
-
-            .why-overlay {
-                padding: 32px 16px;
-            }
-
-            .why-quote {
-                font-size: 24px;
-                line-height: 1.2;
-                margin-right: 0;
-            }
-
-            /* CAROUSEL */
-            .carousel-section {
-                padding: 40px 0;
+            .carousel-wrapper {
+                padding: 0 24px;
             }
 
             .carousel-item {
                 flex: 0 0 280px;
                 height: 350px;
-                border-radius: 12px;
             }
 
-            .carousel-overlay {
-                padding: 16px;
+            .carousel-button {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
             }
 
-            .carousel-label {
-                font-size: 14px;
-            }
-
-            /* TESTIMONIALS */
             .testimonials {
                 padding: 40px 16px;
             }
 
-            .testimonials-header {
-                margin-bottom: 32px;
-            }
-
-            .testimonials-header h2 {
-                font-size: 28px;
-                letter-spacing: -0.28px;
-            }
-
             .testimonials-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
-                max-width: 100%;
             }
 
-            .testimonial-card {
-                padding: 20px;
-                border-radius: 16px;
-            }
-
-            .testimonial-text {
-                font-size: 14px;
-                line-height: 1.5;
-                margin-bottom: 16px;
-                padding-bottom: 16px;
-            }
-
-            .author-avatar {
-                width: 48px;
-                height: 48px;
-                font-size: 14px;
-            }
-
-            .author-info h4 {
-                font-size: 14px;
-            }
-
-            .author-info p {
-                font-size: 12px;
-            }
-
-            /* CONTACT SECTION */
             .contact-section {
                 padding: 40px 16px;
             }
@@ -1530,116 +1387,20 @@
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
-                max-width: 100%;
             }
 
-            .contact-left h2 {
-                font-size: 28px;
-                line-height: 1.2;
-                margin-bottom: 20px;
-            }
-
-            .contact-description {
-                font-size: 14px;
-                line-height: 1.5;
-                margin-bottom: 20px;
-            }
-
-            .contact-links {
-                gap: 16px;
-            }
-
-            .contact-link {
-                padding: 16px;
-                border-radius: 16px;
-                gap: 16px;
-            }
-
-            .contact-icon {
-                width: 48px;
-                height: 48px;
-                font-size: 20px;
-            }
-
-            .contact-info h3 {
-                font-size: 12px;
-            }
-
-            .contact-value {
-                font-size: 16px;
-            }
-
-            /* FORM */
             .form-card {
-                background: var(--white);
-                border-radius: 24px;
                 padding: 20px;
-                box-shadow: 0px 10px 25px -5px rgba(0, 0, 0, 0.1);
             }
 
             .form-card h3 {
                 font-size: 24px;
-                margin-bottom: 20px;
             }
 
             .form-group {
                 grid-template-columns: 1fr;
-                gap: 12px;
-                margin-bottom: 12px;
             }
 
-            .form-label {
-                font-size: 11px;
-                letter-spacing: 0.5px;
-            }
-
-            .form-input,
-            .form-select,
-            .form-textarea {
-                padding: 12px 12px;
-                border-radius: 12px;
-                font-size: 14px;
-            }
-
-            .form-textarea {
-                min-height: 100px;
-            }
-
-            .form-submit {
-                padding: 14px;
-                font-size: 14px;
-                border-radius: 12px;
-                margin-top: 8px;
-            }
-
-            /* FOOTER */
-            footer {
-                padding: 40px 16px;
-            }
-
-            .footer-logo {
-                font-size: 28px;
-                margin-bottom: 20px;
-            }
-
-            .footer-links {
-                flex-wrap: wrap;
-                gap: 16px;
-                margin-bottom: 20px;
-                padding-bottom: 20px;
-            }
-
-            .footer-links a {
-                font-size: 13px;
-                font-weight: 500;
-                letter-spacing: 0.5px;
-            }
-
-            .footer-copyright {
-                font-size: 13px;
-            }
-
-            /* SIDE BUTTONS */
             .side-buttons {
                 right: 12px;
                 bottom: 12px;
@@ -1653,169 +1414,43 @@
                 font-size: 18px;
             }
 
-            .side-button img {
-                width: 20px;
-                height: 20px;
-            }
-
             .side-tooltip {
                 display: none;
             }
 
-            /* MESSAGE */
             .message {
                 top: 80px;
                 right: 12px;
                 padding: 12px 16px;
                 font-size: 12px;
-                border-radius: 6px;
             }
         }
 
-        /* ==================== EXTRA SMALL DEVICES ==================== */
         @media (max-width: 480px) {
-            .header-nav {
-                padding: 10px 12px;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            .cta-button {
-                padding: 8px 16px;
-                font-size: 11px;
-            }
-
-            .hero {
-                padding: 0 12px;
-                margin-top: 50px;
-                min-height: 50vh;
-            }
-
             .hero h1 {
                 font-size: 26px;
-                margin-bottom: 12px;
-            }
-
-            .hero .subtitle {
-                font-size: 13px;
-            }
-
-            .hero .contractor-name {
-                font-size: 12px;
-            }
-
-            .btn-primary,
-            .btn-secondary {
-                padding: 12px 16px;
-                font-size: 13px;
             }
 
             .hero-stats {
                 grid-template-columns: 1fr;
-                gap: 10px;
-                margin-top: 24px;
-            }
-
-            .stat-card {
-                padding: 10px;
-            }
-
-            .stat-label {
-                font-size: 10px;
-            }
-
-            .achievements-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-                padding: 32px 12px;
             }
 
             .achievement-item h3 {
                 font-size: 32px;
             }
 
-            .achievement-item p {
-                font-size: 11px;
-            }
-
-            .limited-offer {
-                padding: 20px 12px;
-            }
-
-            .offer-card {
-                padding: 20px;
-                gap: 16px;
-                border-radius: 20px;
-            }
-
             .offer-content h2 {
                 font-size: 24px;
             }
 
-            .offer-description {
-                font-size: 13px;
-                margin-bottom: 16px;
-            }
-
-            .btn-offer {
-                padding: 12px 24px;
-                font-size: 13px;
-            }
-
-            .offer-timer {
-                font-size: 12px;
-            }
-
-            .about {
-                padding: 32px 12px;
-            }
-
-            .about-grid {
-                gap: 24px;
-            }
-
-            .about-content h2 {
+            .about-content h2,
+            .why-content h2,
+            .contact-left h2 {
                 font-size: 24px;
-                margin-bottom: 16px;
             }
 
-            .about-label {
-                font-size: 11px;
-            }
-
-            .about-text {
-                font-size: 13px;
-            }
-
-            .about-image {
-                height: 250px;
-            }
-
-            .why-choose {
-                padding: 32px 12px;
-            }
-
-            .why-content h2 {
-                font-size: 24px;
-                margin-bottom: 20px;
-            }
-
-            .why-feature h4 {
-                font-size: 13px;
-            }
-
-            .why-feature p {
-                font-size: 12px;
-            }
-
-            .why-image {
-                height: 300px;
-            }
-
-            .why-quote {
-                font-size: 20px;
+            .carousel-wrapper {
+                padding: 0 12px;
             }
 
             .carousel-item {
@@ -1823,78 +1458,16 @@
                 height: 300px;
             }
 
-            .testimonials {
-                padding: 32px 12px;
-            }
-
-            .testimonials-header h2 {
-                font-size: 24px;
-            }
-
-            .testimonial-text {
-                font-size: 13px;
-            }
-
-            .contact-section {
-                padding: 32px 12px;
-            }
-
-            .contact-left h2 {
-                font-size: 24px;
-                margin-bottom: 16px;
-            }
-
-            .contact-description {
-                font-size: 13px;
-            }
-
-            .form-card {
-                padding: 16px;
-            }
-
-            .form-card h3 {
-                font-size: 20px;
-                margin-bottom: 16px;
-            }
-
-            .form-input,
-            .form-select,
-            .form-textarea {
-                font-size: 13px;
-                padding: 10px 10px;
-            }
-
-            .form-submit {
-                padding: 12px;
-                font-size: 13px;
-            }
-
-            footer {
-                padding: 32px 12px;
-            }
-
-            .footer-logo {
-                font-size: 24px;
-            }
-
-            .side-buttons {
-                right: 8px;
-                bottom: 8px;
-                gap: 6px;
+            .carousel-button {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
             }
 
             .side-button {
                 width: 44px;
                 height: 44px;
                 font-size: 16px;
-            }
-
-            .message {
-                top: 70px;
-                right: 8px;
-                left: 8px;
-                padding: 10px 12px;
-                font-size: 11px;
             }
         }
     </style>
@@ -2012,11 +1585,9 @@
                 
                 <div class="about-features">
                     <div class="feature-box">
-                        <img src="data:image/svg+xml,%3Csvg width='32' height='40' viewBox='0 0 32 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='8' fill='%239d4300'/%3E%3C/svg%3E" alt="Quality">
                         <h4>Certified Quality</h4>
                     </div>
                     <div class="feature-box">
-                        <img src="data:image/svg+xml,%3Csvg width='36' height='42' viewBox='0 0 36 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='8' width='32' height='24' fill='%239d4300'/%3E%3C/svg%3E" alt="Delivery">
                         <h4>On-Time Delivery</h4>
                     </div>
                 </div>
@@ -2026,9 +1597,7 @@
                 <img src="https://www.figma.com/api/mcp/asset/553e3c96-55e2-458d-8c66-24d3948bb2d0" alt="About PondyPainters">
                 <div class="about-badge">
                     <div class="badge-content">
-                        <div class="badge-icon">
-                            <img src="data:image/svg+xml,%3Csvg width='67' height='65' viewBox='0 0 67 65' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='33' cy='33' r='30' fill='%239d4300' opacity='0.1'/%3E%3Ccircle cx='33' cy='33' r='25' fill='%239d4300'/%3E%3C/svg%3E" alt="Badge">
-                        </div>
+                        <div class="badge-icon">👥</div>
                         <div class="badge-text">
                             <h4>Trusted by 1000+ Owners</h4>
                             <p>Across Pondicherry & Auroville</p>
@@ -2049,7 +1618,7 @@
                     <div class="why-feature">
                         <div class="why-feature-icon">✓</div>
                         <div>
-                            <h4>Achivement Award By AsianPaints</h4>
+                            <h4>Achievement Award By AsianPaints</h4>
                             <p>Trained professionals with decades of specific site experience across the region.</p>
                         </div>
                     </div>
@@ -2093,57 +1662,57 @@
         </div>
     </section>
 
-  <!-- PROJECT CAROUSEL -->
-<section class="carousel-section" id="projects">
-    <div class="carousel-wrapper">
-        <div class="carousel-container" id="carouselContainer">
-            <div class="carousel-item">
-                <img src="https://www.figma.com/api/mcp/asset/434c0666-7348-4840-b8b3-04e8d0051377" alt="Project 1">
-                <div class="carousel-overlay">
-                    <div class="carousel-label">Exterior Transformation</div>
+    <!-- PROJECT CAROUSEL -->
+    <section class="carousel-section" id="projects">
+        <div class="carousel-wrapper">
+            <div class="carousel-container" id="carouselContainer">
+                <div class="carousel-item">
+                    <img src="https://www.figma.com/api/mcp/asset/434c0666-7348-4840-b8b3-04e8d0051377" alt="Project 1">
+                    <div class="carousel-overlay">
+                        <div class="carousel-label">Exterior Transformation</div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.figma.com/api/mcp/asset/5fc6e784-86b7-4185-99ab-e971058db30d" alt="Project 2">
+                    <div class="carousel-overlay">
+                        <div class="carousel-label">Terrace Waterproofing</div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.figma.com/api/mcp/asset/02f83465-a3c1-4ec5-bc24-5ab9560228f8" alt="Project 3">
+                    <div class="carousel-overlay">
+                        <div class="carousel-label">Modern Interiors</div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.figma.com/api/mcp/asset/b2956b52-3a8d-44a5-bc9c-142d519cf4e9" alt="Project 4">
+                    <div class="carousel-overlay">
+                        <div class="carousel-label">Exterior Painting</div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.figma.com/api/mcp/asset/d8f05935-b37e-4707-b86d-ba8aefc224d6" alt="Project 5">
+                    <div class="carousel-overlay">
+                        <div class="carousel-label">Commercial Complex</div>
+                    </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="https://www.figma.com/api/mcp/asset/5fc6e784-86b7-4185-99ab-e971058db30d" alt="Project 2">
-                <div class="carousel-overlay">
-                    <div class="carousel-label">Terrace Waterproofing</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.figma.com/api/mcp/asset/02f83465-a3c1-4ec5-bc24-5ab9560228f8" alt="Project 3">
-                <div class="carousel-overlay">
-                    <div class="carousel-label">Modern Interiors</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.figma.com/api/mcp/asset/b2956b52-3a8d-44a5-bc9c-142d519cf4e9" alt="Project 4">
-                <div class="carousel-overlay">
-                    <div class="carousel-label">Exterior Painting</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.figma.com/api/mcp/asset/d8f05935-b37e-4707-b86d-ba8aefc224d6" alt="Project 5">
-                <div class="carousel-overlay">
-                    <div class="carousel-label">Commercial Complex</div>
-                </div>
+
+            <div class="carousel-nav">
+                <button class="carousel-button" id="prevBtn" onclick="scrollCarousel(-1)" title="Previous">
+                    ←
+                </button>
+                <button class="carousel-button" id="nextBtn" onclick="scrollCarousel(1)" title="Next">
+                    →
+                </button>
             </div>
         </div>
 
-        <div class="carousel-nav">
-            <button class="carousel-button" id="prevBtn" onclick="scrollCarousel(-1)" title="Previous">
-                ←
-            </button>
-            <button class="carousel-button" id="nextBtn" onclick="scrollCarousel(1)" title="Next">
-                →
-            </button>
+        <div class="carousel-indicators" id="carouselIndicators"></div>
+        <div class="carousel-info">
+            Project <span id="currentSlide">1</span> of <span id="totalSlides">5</span>
         </div>
-    </div>
-
-    <div class="carousel-indicators" id="carouselIndicators"></div>
-    <div class="carousel-info">
-        Project <span id="currentSlide">1</span> of <span id="totalSlides">5</span>
-    </div>
-</section>
+    </section>
 
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
@@ -2211,9 +1780,7 @@
                 
                 <div class="contact-links">
                     <a href="tel:+919843926867" class="contact-link contact-phone">
-                        <div class="contact-icon">
-                            <span>📞</span>
-                        </div>
+                        <div class="contact-icon">📞</div>
                         <div>
                             <h3>Call Us Anytime</h3>
                             <div class="contact-value">+91 9843926867</div>
@@ -2221,9 +1788,7 @@
                     </a>
 
                     <a href="https://wa.me/919843926867" class="contact-link contact-whatsapp">
-                        <div class="contact-icon">
-                            <span>💬</span>
-                        </div>
+                        <div class="contact-icon">💬</div>
                         <div>
                             <h3>WhatsApp Support</h3>
                             <div class="contact-value">Chat with our Experts</div>
@@ -2314,6 +1879,85 @@
     <script>
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzdCmBPKYVjKH0ScxBi-i_-GA7ac4okt2zORh5nxxUvGKH1KQPz2FgKaUBhZ5GHvoaC/exec';
 
+        // ==================== CAROUSEL LOGIC ====================
+        let currentCarouselIndex = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const totalCarouselItems = carouselItems.length;
+        const carouselContainer = document.getElementById('carouselContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function initCarouselIndicators() {
+            const indicatorsContainer = document.getElementById('carouselIndicators');
+            for (let i = 0; i < totalCarouselItems; i++) {
+                const indicator = document.createElement('button');
+                indicator.className = 'indicator' + (i === 0 ? ' active' : '');
+                indicator.onclick = () => goToSlide(i);
+                indicator.title = `Go to slide ${i + 1}`;
+                indicatorsContainer.appendChild(indicator);
+            }
+        }
+
+        function updateCarousel() {
+            const scrollAmount = currentCarouselIndex * (350 + 32);
+            carouselContainer.scrollLeft = scrollAmount;
+
+            document.querySelectorAll('.indicator').forEach((ind, idx) => {
+                ind.classList.toggle('active', idx === currentCarouselIndex);
+            });
+
+            document.getElementById('currentSlide').textContent = currentCarouselIndex + 1;
+
+            prevBtn.disabled = currentCarouselIndex === 0;
+            nextBtn.disabled = currentCarouselIndex === totalCarouselItems - 1;
+        }
+
+        function scrollCarousel(direction) {
+            currentCarouselIndex += direction;
+
+            if (currentCarouselIndex < 0) currentCarouselIndex = 0;
+            if (currentCarouselIndex >= totalCarouselItems) currentCarouselIndex = totalCarouselItems - 1;
+
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentCarouselIndex = index;
+            updateCarousel();
+        }
+
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+
+        function handleSwipe() {
+            if (touchStartX - touchEndX > 50) {
+                scrollCarousel(1);
+            }
+            if (touchEndX - touchStartX > 50) {
+                scrollCarousel(-1);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') scrollCarousel(-1);
+            if (e.key === 'ArrowRight') scrollCarousel(1);
+        });
+
+        window.addEventListener('load', () => {
+            initCarouselIndicators();
+            document.getElementById('totalSlides').textContent = totalCarouselItems;
+            updateCarousel();
+        });
+
+        // ==================== FORM HANDLING ====================
         function handleFormSubmit(event) {
             event.preventDefault();
 
@@ -2324,18 +1968,15 @@
             const serviceNeeded = document.getElementById('serviceNeeded').value;
             const message = document.getElementById('message').value;
 
-            // Validate inputs
             if (!fullName || !phoneNumber || !location || !serviceNeeded) {
                 showErrorMessage('Please fill in all required fields');
                 return;
             }
 
-            // Disable button during submission
             const submitBtn = form.querySelector('.form-submit');
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
-            // Create URL parameters
             const params = new URLSearchParams({
                 name: fullName,
                 phone: phoneNumber,
@@ -2346,7 +1987,6 @@
 
             const url = SCRIPT_URL + '?' + params.toString();
 
-            // Use fetch with no-cors mode
             fetch(url, {
                 method: 'GET',
                 mode: 'no-cors'
@@ -2385,7 +2025,6 @@
             }, 5000);
         }
 
-        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
@@ -2398,7 +2037,6 @@
             });
         });
 
-        // Update active nav link on scroll
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-links a');
