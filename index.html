@@ -2093,9 +2093,10 @@
         </div>
     </section>
 
-    <!-- PROJECT CAROUSEL -->
-    <section class="carousel-section" id="projects">
-        <div class="carousel-container">
+   <!-- PROJECT CAROUSEL -->
+<section class="carousel-section" id="projects">
+    <div class="carousel-wrapper">
+        <div class="carousel-container" id="carouselContainer">
             <div class="carousel-item">
                 <img src="https://www.figma.com/api/mcp/asset/434c0666-7348-4840-b8b3-04e8d0051377" alt="Project 1">
                 <div class="carousel-overlay">
@@ -2127,7 +2128,22 @@
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="carousel-nav">
+            <button class="carousel-button" id="prevBtn" onclick="scrollCarousel(-1)" title="Previous">
+                ←
+            </button>
+            <button class="carousel-button" id="nextBtn" onclick="scrollCarousel(1)" title="Next">
+                →
+            </button>
+        </div>
+    </div>
+
+    <div class="carousel-indicators" id="carouselIndicators"></div>
+    <div class="carousel-info">
+        Project <span id="currentSlide">1</span> of <span id="totalSlides">5</span>
+    </div>
+</section>
 
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
