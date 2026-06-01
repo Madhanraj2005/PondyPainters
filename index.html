@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PondyPainters - Coastal Painting & Waterproofing Experts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -250,11 +251,6 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        .stat-content {
-            display: flex;
-            flex-direction: column;
-        }
-
         .stat-label {
             font-size: 16px;
             font-weight: 700;
@@ -396,522 +392,174 @@
             font-size: 18px;
         }
 
-        /* ==================== ABOUT SECTION ==================== */
-        .about {
+        /* ==================== COMBINED ABOUT & WHY SECTION ==================== */
+        .about-why-section {
             padding: 160px 80px;
             max-width: 1440px;
             margin: 0 auto;
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 96px;
-            align-items: center;
+        .about-why-header {
+            margin-bottom: 80px;
         }
 
-        .about-content h2 {
+        .about-why-header h2 {
             font-family: 'Montserrat', serif;
             font-size: 56px;
             font-weight: 700;
             color: var(--text-dark);
             line-height: 1.25;
-            margin-bottom: 40px;
+            margin-bottom: 24px;
             letter-spacing: -0.56px;
         }
 
-        .about-label {
-            font-size: 18px;
-            font-weight: 400;
-            color: var(--primary-brown);
-            text-transform: uppercase;
-            letter-spacing: 3.6px;
-            margin-bottom: 24px;
-        }
-
-        .about-text {
+        .about-why-header p {
             font-size: 20px;
             color: var(--text-gray);
             line-height: 1.6;
-            margin-bottom: 32px;
-            text-align: justify;
+            max-width: 800px;
         }
 
-        .about-image {
-            position: relative;
-            border-radius: 40px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            height: 511.5px;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 40px;
-        }
-
-        .feature-box {
-            background: #e6e8ea;
-            padding: 24px;
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            align-items: flex-start;
-        }
-
-        .feature-box::before {
-            content: '✓';
-            display: inline-block;
-            width: 32px;
-            height: 40px;
-            font-size: 32px;
-            line-height: 40px;
-            color: var(--primary-brown);
-            font-weight: bold;
-        }
-
-        .feature-box h4 {
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-
-        .about-badge {
-            position: absolute;
-            bottom: -40px;
-            left: -40px;
-            backdrop-filter: blur(12px);
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 32px;
-            padding: 33px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .badge-content {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .badge-icon {
-            width: 67.512px;
-            height: 65px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            flex-shrink: 0;
-        }
-
-        .badge-text h4 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 4px;
-        }
-
-        .badge-text p {
-            font-size: 16px;
-            color: var(--text-dark);
-            opacity: 0.7;
-        }
-
-        /* ==================== WHY CHOOSE US ==================== */
-        .why-choose {
-            padding: 160px 80px;
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        .why-grid {
+        .about-why-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 96px;
-            align-items: center;
+            margin-bottom: 80px;
         }
 
-        .why-content h2 {
-            font-family: 'Montserrat', serif;
-            font-size: 56px;
+        .about-why-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-why-content h3 {
+            font-size: 40px;
             font-weight: 700;
             color: var(--text-dark);
-            line-height: 1.25;
-            margin-bottom: 48px;
-            letter-spacing: -0.56px;
+            margin-bottom: 32px;
+            letter-spacing: -0.4px;
         }
 
-        .why-features {
+        .about-why-features {
             display: grid;
-            gap: 32px;
-        }
-
-        .why-feature {
-            display: flex;
             gap: 24px;
         }
 
-        .why-feature-icon {
-            flex-shrink: 0;
-            width: 32.3px;
-            height: 28.025px;
-            font-size: 24px;
-            line-height: 28px;
+        .about-why-feature {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
         }
 
-        .why-feature h4 {
-            font-size: 20px;
-            font-weight: 400;
+        .about-why-feature-icon {
+            flex-shrink: 0;
+            font-size: 24px;
+            color: var(--primary-orange);
+            margin-top: 4px;
+        }
+
+        .about-why-feature h4 {
+            font-size: 18px;
+            font-weight: 600;
             color: var(--text-dark);
             margin-bottom: 8px;
         }
 
-        .why-feature p {
-            font-size: 18px;
+        .about-why-feature p {
+            font-size: 16px;
             color: var(--text-dark);
             opacity: 0.7;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        .why-image {
+        /* IMAGES COLUMN */
+        .images-column {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .image-card {
             position: relative;
-            border-radius: 48px;
+            border-radius: 40px;
             overflow: hidden;
             box-shadow: var(--shadow-lg);
-            height: 600px;
+            height: 400px;
         }
 
-        .why-image img {
+        .image-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .why-overlay {
+        .image-card-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            padding: 64px;
+            padding: 40px;
             color: var(--white);
         }
 
-        .why-quote {
+        .image-card-quote {
             font-family: 'Inter', sans-serif;
-            font-size: 48px;
+            font-size: 32px;
             font-weight: 700;
             font-style: italic;
             line-height: 1.25;
-            margin-right: 50.2px;
         }
 
-        /* ==================== TESTIMONIALS ==================== */
-        .testimonials {
-            background: var(--light-gray);
-            padding: 160px 80px;
-        }
-
-        .testimonials-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .testimonials-header h2 {
-            font-family: 'Montserrat', serif;
-            font-size: 56px;
-            font-weight: 700;
-            color: var(--text-dark);
-            letter-spacing: -0.56px;
-        }
-
-        .testimonials-grid {
-            max-width: 1440px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .testimonial-card {
-            backdrop-filter: blur(12px);
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 24px;
-            padding: 41px;
-            box-shadow: 0px 4px 20px 0px rgba(15, 23, 42, 0.05);
-        }
-
-        .testimonial-stars {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 24px;
-        }
-
-        .testimonial-text {
-            font-size: 20px;
-            color: var(--text-gray);
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 24px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            padding-bottom: 25px;
-        }
-
-        .testimonial-author {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .author-avatar {
-            width: 64px;
-            height: 64px;
-            border-radius: 9999px;
-            background: #eceef0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .author-info h4 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 4px;
-        }
-
-        .author-info p {
-            font-size: 14px;
-            color: var(--text-dark);
-            opacity: 0.6;
-        }
-
-        /* ==================== CONTACT FORM SECTION ==================== */
-        .contact-section {
-            background: var(--dark-navy);
-            padding: 160px 80px;
-        }
-
-        .contact-grid {
-            max-width: 1440px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 96px;
-        }
-
-        .contact-left h2 {
-            font-family: 'Montserrat', serif;
-            font-size: 56px;
-            font-weight: 700;
-            color: var(--white);
-            line-height: 1.25;
-            margin-bottom: 40px;
-            letter-spacing: -0.56px;
-        }
-
-        .contact-description {
-            font-size: 20px;
-            color: var(--white);
-            opacity: 0.8;
-            line-height: 1.6;
-            margin-bottom: 32px;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        .contact-link {
-            background: rgba(255, 255, 255, 0.05);
-            border: none;
-            padding: 32px;
-            border-radius: 24px;
-            display: flex;
-            gap: 32px;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .contact-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateX(8px);
-        }
-
-        .contact-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 28px;
-        }
-
-        .contact-phone .contact-icon {
-            background: var(--primary-brown);
-        }
-
-        .contact-whatsapp .contact-icon {
-            background: var(--green-whatsapp);
-        }
-
-        .contact-info h3 {
-            font-size: 16px;
-            color: var(--white);
-            opacity: 0.6;
-            font-weight: 400;
-            margin-bottom: 4px;
-        }
-
-        .contact-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--white);
-        }
-
-        /* ==================== FORM SECTION ==================== */
-        .form-card {
-            background: var(--white);
-            border-radius: 40px;
-            padding: 48px;
-            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+        .badge {
             position: relative;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 32px;
+            padding: 24px;
+            box-shadow: var(--shadow-lg);
+            margin-top: -40px;
+            margin-left: 20px;
+            display: inline-flex;
+            gap: 16px;
+            align-items: center;
+            width: fit-content;
+            z-index: 10;
         }
 
-        .form-card::before {
-            content: '';
-            position: absolute;
-            inset: 0 0.5px -0.5px 0;
-            border-radius: 40px;
-            background: transparent;
-            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
-            pointer-events: none;
+        .badge-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-brown);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 28px;
+            flex-shrink: 0;
         }
 
-        .form-card h3 {
-            font-size: 36px;
+        .badge-text h4 {
+            font-size: 16px;
             font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 32px;
+            margin-bottom: 2px;
         }
 
-        .form-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 24px;
-        }
-
-        .form-field {
-            display: flex;
-            flex-direction: column;
-            gap: 8.5px;
-        }
-
-        .form-field.full {
-            grid-column: 1 / -1;
-        }
-
-        .form-label {
+        .badge-text p {
             font-size: 14px;
-            font-weight: 400;
             color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: 0.7px;
-            opacity: 0.6;
-        }
-
-        .form-input,
-        .form-select,
-        .form-textarea {
-            background: #f2f4f6;
-            border: none;
-            padding: 19px 16px 20px;
-            border-radius: 16px;
-            font-size: 18px;
-            color: var(--text-dark);
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-        }
-
-        .form-input::placeholder,
-        .form-select::placeholder,
-        .form-textarea::placeholder {
-            color: var(--text-light);
-        }
-
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
-            outline: none;
-            background: #e8eaed;
-            border-bottom: 2px solid var(--primary-orange);
-        }
-
-        .form-select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 20L3.5 10H23.5L13.5 20Z' fill='%23191c1e'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 50px;
-        }
-
-        .form-textarea {
-            resize: none;
-            min-height: 120px;
-            grid-column: 1 / -1;
-        }
-
-        .form-submit {
-            background: var(--primary-orange);
-            color: var(--white);
-            border: none;
-            padding: 24px;
-            border-radius: 16px;
-            font-size: 20px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-            margin-top: 8px;
-        }
-
-        .form-submit:hover {
-            background: #ff8c42;
-            transform: translateY(-2px);
-            box-shadow: 0px 15px 20px -3px rgba(0, 0, 0, 0.15);
-        }
-
-        .form-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
+            opacity: 0.7;
         }
 
         /* ==================== PROJECT CAROUSEL ==================== */
         .carousel-section {
             background: var(--light-gray);
             padding: 80px 0;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .carousel-wrapper {
@@ -924,10 +572,25 @@
         .carousel-container {
             display: flex;
             gap: 32px;
-            overflow: hidden;
+            overflow-x: auto;
             scroll-behavior: smooth;
+            padding: 20px 0;
             scroll-snap-type: x mandatory;
-            position: relative;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .carousel-container::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb {
+            background: var(--primary-orange);
+            border-radius: 10px;
         }
 
         .carousel-item {
@@ -943,12 +606,12 @@
             cursor: grab;
         }
 
-        .carousel-item:hover {
-            transform: scale(1.02);
-        }
-
         .carousel-item:active {
             cursor: grabbing;
+        }
+
+        .carousel-item:hover {
+            transform: scale(1.02);
         }
 
         .carousel-item img {
@@ -1064,10 +727,296 @@
             font-weight: 700;
         }
 
+        /* ==================== TESTIMONIALS ==================== */
+        .testimonials {
+            background: var(--light-gray);
+            padding: 100px 80px;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .testimonials-header h2 {
+            font-family: 'Montserrat', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.48px;
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding-bottom: 16px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            background: #eceef0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 12px;
+        }
+
+        .author-info h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+
+        .author-info p {
+            font-size: 12px;
+            color: var(--text-dark);
+            opacity: 0.6;
+        }
+
+        /* ==================== CONTACT FORM SECTION ==================== */
+        .contact-section {
+            background: var(--dark-navy);
+            padding: 100px 80px;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-left h2 {
+            font-family: 'Montserrat', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.25;
+            margin-bottom: 24px;
+            letter-spacing: -0.48px;
+        }
+
+        .contact-description {
+            font-size: 16px;
+            color: var(--white);
+            opacity: 0.8;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-link {
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            padding: 20px;
+            border-radius: 16px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(6px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+
+        .contact-phone .contact-icon {
+            background: var(--primary-brown);
+            color: var(--white);
+        }
+
+        .contact-whatsapp .contact-icon {
+            background: var(--green-whatsapp);
+            color: var(--white);
+        }
+
+        .contact-info h3 {
+            font-size: 12px;
+            color: var(--white);
+            opacity: 0.6;
+            font-weight: 400;
+            margin-bottom: 2px;
+        }
+
+        .contact-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        /* ==================== FORM SECTION ==================== */
+        .form-card {
+            background: var(--white);
+            border-radius: 32px;
+            padding: 36px;
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .form-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-field.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.6;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            background: #f2f4f6;
+            border: none;
+            padding: 12px 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-input::placeholder,
+        .form-select::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-light);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            background: #e8eaed;
+            border-bottom: 2px solid var(--primary-orange);
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 20L3.5 10H23.5L13.5 20Z' fill='%23191c1e'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            padding-right: 40px;
+        }
+
+        .form-textarea {
+            resize: none;
+            min-height: 100px;
+            grid-column: 1 / -1;
+        }
+
+        .form-submit {
+            background: var(--primary-orange);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-top: 8px;
+        }
+
+        .form-submit:hover {
+            background: #ff8c42;
+            transform: translateY(-2px);
+            box-shadow: 0px 15px 20px -3px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         /* ==================== FOOTER ==================== */
         footer {
             background: var(--dark-navy);
-            padding: 96px 80px;
+            padding: 80px;
             text-align: center;
         }
 
@@ -1095,10 +1044,10 @@
         .footer-links a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             transition: color 0.3s ease;
-            letter-spacing: 0.9px;
+            letter-spacing: 0.8px;
         }
 
         .footer-links a:hover {
@@ -1107,7 +1056,7 @@
 
         .footer-copyright {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 20px;
+            font-size: 16px;
         }
 
         /* ==================== SIDE BUTTONS ==================== */
@@ -1133,7 +1082,7 @@
             transition: all 0.3s ease;
             box-shadow: var(--shadow-lg);
             position: relative;
-            font-size: 28px;
+            font-size: 24px;
         }
 
         .btn-whatsapp {
@@ -1232,20 +1181,23 @@
         @media (max-width: 768px) {
             :root {
                 --shadow-sm: 0px 2px 4px -1px rgba(0, 0, 0, 0.1);
-                --shadow-md: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-                --shadow-lg: 0px 15px 25px -5px rgba(0, 0, 0, 0.15);
+                --shadow-md: 0px 8px 12px -3px rgba(0, 0, 0, 0.1);
+                --shadow-lg: 0px 10px 20px -5px rgba(0, 0, 0, 0.15);
             }
 
             body {
                 font-size: 14px;
             }
 
+            /* HEADER */
             .header-nav {
-                padding: 12px 16px;
+                padding: 10px 14px;
+                gap: 8px;
             }
 
             .logo {
-                font-size: 24px;
+                font-size: 18px;
+                gap: 6px;
             }
 
             .nav-links {
@@ -1253,209 +1205,240 @@
             }
 
             .cta-button {
-                padding: 10px 20px;
-                font-size: 12px;
+                padding: 10px 16px;
+                font-size: 11px;
             }
 
+            /* HERO SECTION */
             .hero {
-                padding: 0 16px;
-                margin-top: 60px;
-                min-height: 60vh;
+                padding: 0 12px;
+                margin-top: 50px;
+                min-height: 50vh;
                 background-attachment: scroll;
             }
 
+            .hero-content {
+                max-width: 100%;
+            }
+
             .hero h1 {
-                font-size: 32px;
-                margin-bottom: 16px;
+                font-size: 24px;
+                line-height: 1.2;
+                margin-bottom: 10px;
+            }
+
+            .hero .subtitle {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+
+            .hero .contractor-name {
+                font-size: 10px;
+                margin-bottom: 6px;
             }
 
             .hero-buttons {
                 flex-direction: column;
-                gap: 12px;
+                gap: 8px;
+                margin-top: 12px;
             }
 
             .btn-primary,
             .btn-secondary {
                 width: 100%;
-                padding: 14px 20px;
-                font-size: 14px;
+                padding: 10px 14px;
+                font-size: 12px;
+                border-radius: 8px;
             }
 
             .hero-stats {
                 grid-template-columns: 1fr 1fr;
-                gap: 12px;
-                margin-top: 32px;
+                gap: 8px;
+                margin-top: 16px;
             }
 
+            .stat-card {
+                padding: 8px;
+                border-radius: 10px;
+                gap: 6px;
+            }
+
+            .stat-label {
+                font-size: 9px;
+                letter-spacing: 0.3px;
+            }
+
+            /* ACHIEVEMENTS */
             .achievements {
-                padding: 40px 16px;
+                padding: 28px 12px;
             }
 
             .achievements-grid {
                 grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                max-width: 100%;
             }
 
             .achievement-item h3 {
-                font-size: 36px;
+                font-size: 28px;
             }
 
+            .achievement-item p {
+                font-size: 10px;
+                letter-spacing: 0.6px;
+            }
+
+            /* LIMITED OFFER */
             .limited-offer {
-                padding: 24px 16px;
+                padding: 16px 12px;
+                max-width: 100%;
             }
 
             .offer-card {
                 grid-template-columns: 1fr;
-                padding: 24px;
-                gap: 20px;
+                padding: 16px;
+                gap: 12px;
+                border-radius: 16px;
+            }
+
+            .offer-card::before {
+                width: 120px;
+                height: 120px;
+                right: -50px;
+                top: -50px;
+            }
+
+            .offer-tag {
+                padding: 4px 12px;
+                font-size: 9px;
+                margin-bottom: 6px;
             }
 
             .offer-content h2 {
-                font-size: 28px;
-            }
-
-            .about {
-                padding: 40px 16px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .about-content h2 {
-                font-size: 28px;
-            }
-
-            .about-image {
-                height: 300px;
-            }
-
-            .about-features {
-                grid-template-columns: 1fr;
-            }
-
-            .about-badge {
-                bottom: -20px;
-                left: -20px;
-                padding: 16px;
-            }
-
-            .badge-icon {
-                font-size: 28px;
-            }
-
-            .why-choose {
-                padding: 40px 16px;
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .why-content h2 {
-                font-size: 28px;
-            }
-
-            .carousel-wrapper {
-                padding: 0 24px;
-            }
-
-            .carousel-item {
-                flex: 0 0 280px;
-                height: 350px;
-            }
-
-            .carousel-button {
-                width: 40px;
-                height: 40px;
                 font-size: 18px;
+                line-height: 1.2;
+                margin-bottom: 8px;
             }
 
-            .testimonials {
-                padding: 40px 16px;
+            .offer-description {
+                font-size: 12px;
+                line-height: 1.4;
+                margin-bottom: 12px;
             }
 
-            .testimonials-grid {
-                grid-template-columns: 1fr;
+            .btn-offer {
+                padding: 10px 20px;
+                font-size: 12px;
             }
 
-            .contact-section {
-                padding: 40px 16px;
+            .offer-timer {
+                font-size: 11px;
+                gap: 4px;
             }
 
-            .contact-grid {
+            /* ABOUT WHY SECTION */
+            .about-why-section {
+                padding: 40px 12px;
+                max-width: 100%;
+            }
+
+            .about-why-header {
+                margin-bottom: 32px;
+            }
+
+            .about-why-header h2 {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+
+            .about-why-header p {
+                font-size: 13px;
+            }
+
+            .about-why-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
+                margin-bottom: 32px;
             }
 
-            .form-card {
+            .about-why-content h3 {
+                font-size: 20px;
+                margin-bottom: 16px;
+            }
+
+            .about-why-feature {
+                gap: 12px;
+            }
+
+            .about-why-feature-icon {
+                font-size: 20px;
+            }
+
+            .about-why-feature h4 {
+                font-size: 14px;
+            }
+
+            .about-why-feature p {
+                font-size: 12px;
+            }
+
+            .image-card {
+                height: 250px;
+                border-radius: 20px;
+            }
+
+            .image-card-overlay {
                 padding: 20px;
             }
 
-            .form-card h3 {
-                font-size: 24px;
+            .image-card-quote {
+                font-size: 20px;
             }
 
-            .form-group {
-                grid-template-columns: 1fr;
+            .badge {
+                padding: 14px;
+                margin-left: 8px;
             }
 
-            .side-buttons {
-                right: 12px;
-                bottom: 12px;
-                flex-direction: row;
-                gap: 8px;
+            .badge-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
             }
 
-            .side-button {
-                width: 50px;
-                height: 50px;
-                font-size: 18px;
-            }
-
-            .side-tooltip {
-                display: none;
-            }
-
-            .message {
-                top: 80px;
-                right: 12px;
-                padding: 12px 16px;
+            .badge-text h4 {
                 font-size: 12px;
             }
-        }
 
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 26px;
+            .badge-text p {
+                font-size: 10px;
             }
 
-            .hero-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .achievement-item h3 {
-                font-size: 32px;
-            }
-
-            .offer-content h2 {
-                font-size: 24px;
-            }
-
-            .about-content h2,
-            .why-content h2,
-            .contact-left h2 {
-                font-size: 24px;
+            /* CAROUSEL */
+            .carousel-section {
+                padding: 28px 0;
             }
 
             .carousel-wrapper {
-                padding: 0 12px;
+                padding: 0 8px;
+            }
+
+            .carousel-container {
+                gap: 12px;
             }
 
             .carousel-item {
-                flex: 0 0 240px;
-                height: 300px;
+                flex: 0 0 180px;
+                height: 220px;
+                border-radius: 10px;
+            }
+
+            .carousel-overlay {
+                padding: 8px;
+            }
+
+            .carousel-label {
+                font-size: 10px;
             }
 
             .carousel-button {
@@ -1464,10 +1447,225 @@
                 font-size: 16px;
             }
 
-            .side-button {
-                width: 44px;
-                height: 44px;
+            .carousel-indicators {
+                margin-top: 16px;
+                gap: 4px;
+            }
+
+            .indicator {
+                width: 6px;
+                height: 6px;
+            }
+
+            .indicator.active {
+                width: 20px;
+            }
+
+            .carousel-info {
+                font-size: 11px;
+                margin-top: 12px;
+            }
+
+            /* TESTIMONIALS */
+            .testimonials {
+                padding: 40px 12px;
+            }
+
+            .testimonials-header {
+                margin-bottom: 24px;
+            }
+
+            .testimonials-header h2 {
+                font-size: 22px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                max-width: 100%;
+            }
+
+            .testimonial-card {
+                padding: 14px;
+                border-radius: 14px;
+            }
+
+            .testimonial-text {
+                font-size: 12px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+            }
+
+            .author-avatar {
+                width: 36px;
+                height: 36px;
+                font-size: 11px;
+            }
+
+            .author-info h4 {
+                font-size: 12px;
+            }
+
+            .author-info p {
+                font-size: 10px;
+            }
+
+            /* CONTACT SECTION */
+            .contact-section {
+                padding: 40px 12px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                max-width: 100%;
+            }
+
+            .contact-left h2 {
+                font-size: 22px;
+                margin-bottom: 12px;
+            }
+
+            .contact-description {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+
+            .contact-links {
+                gap: 10px;
+            }
+
+            .contact-link {
+                padding: 12px;
+                gap: 10px;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
                 font-size: 16px;
+            }
+
+            .contact-info h3 {
+                font-size: 10px;
+            }
+
+            .contact-value {
+                font-size: 13px;
+            }
+
+            /* FORM */
+            .form-card {
+                padding: 16px;
+                border-radius: 20px;
+            }
+
+            .form-card h3 {
+                font-size: 18px;
+                margin-bottom: 14px;
+            }
+
+            .form-group {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+
+            .form-label {
+                font-size: 9px;
+            }
+
+            .form-input,
+            .form-select,
+            .form-textarea {
+                padding: 10px 10px;
+                border-radius: 10px;
+                font-size: 12px;
+            }
+
+            .form-textarea {
+                min-height: 80px;
+            }
+
+            .form-submit {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            /* FOOTER */
+            footer {
+                padding: 32px 12px;
+            }
+
+            .footer-logo {
+                font-size: 24px;
+                margin-bottom: 16px;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 16px;
+                padding-bottom: 16px;
+            }
+
+            .footer-links a {
+                font-size: 11px;
+                letter-spacing: 0.3px;
+            }
+
+            .footer-copyright {
+                font-size: 11px;
+            }
+
+            /* SIDE BUTTONS */
+            .side-buttons {
+                right: 8px;
+                bottom: 8px;
+                flex-direction: row;
+                gap: 4px;
+            }
+
+            .side-button {
+                width: 42px;
+                height: 42px;
+                font-size: 16px;
+            }
+
+            .side-tooltip {
+                display: none;
+            }
+
+            /* MESSAGE */
+            .message {
+                top: 60px;
+                right: 8px;
+                left: 8px;
+                padding: 8px 10px;
+                font-size: 10px;
+            }
+        }
+
+        /* ULTRA SMALL */
+        @media (max-width: 380px) {
+            .header-nav {
+                padding: 8px 10px;
+            }
+
+            .logo {
+                font-size: 16px;
+            }
+
+            .hero h1 {
+                font-size: 18px;
+            }
+
+            .about-why-content h3 {
+                font-size: 16px;
+            }
+
+            .contact-left h2 {
+                font-size: 18px;
             }
         }
     </style>
@@ -1487,7 +1685,6 @@
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#why">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -1512,24 +1709,16 @@
 
             <div class="hero-stats">
                 <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-label">25+ YEARS<br>EXPERIENCE</div>
-                    </div>
+                    <div class="stat-label">25+ YEARS<br>EXPERIENCE</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-label">300+<br>BUILDINGS</div>
-                    </div>
+                    <div class="stat-label">300+<br>BUILDINGS</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-label">ASIAN PAINTS<br>RATED</div>
-                    </div>
+                    <div class="stat-label">ASIAN PAINTS<br>RATED</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-label">EXPERT<br>WORKERS</div>
-                    </div>
+                    <div class="stat-label">EXPERT<br>WORKERS</div>
                 </div>
             </div>
         </div>
@@ -1563,7 +1752,7 @@
             <div class="offer-content">
                 <span class="offer-tag">Limited Offer</span>
                 <h2>Book A ₹99 Expert Site Inspection</h2>
-                <p class="offer-description">Stop guessing. Get a precise damage assessment, material estimation, and final quote from our experts. Limited slots available every week!</p>
+                <p class="offer-description">Get a precise damage assessment, material estimation, and final quote from our experts. Limited slots available!</p>
             </div>
             <div class="offer-actions">
                 <button class="btn-offer" onclick="window.open('https://payments.cashfree.com/forms/getaudit', '_blank');">Claim Your Audit Now</button>
@@ -1574,89 +1763,72 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="about" id="about">
-        <div class="about-grid">
-            <div class="about-content">
-                <span class="about-label">Our Legacy</span>
-                <h2>25 Years of Excellence in Coastal Preservation.</h2>
-                <p class="about-text">Founded in the heart of Pondicherry, PondyPainters has grown from a local family-run business into the city's most trusted name for high-end residential and commercial finishes. We understand the unique challenges of coastal architecture—from salt-air corrosion to heavy monsoon rains.</p>
-                <p class="about-text" style="opacity: 0.8;">Our team uses exclusively premium materials, combined with time-tested techniques and modern technology, to ensure your building doesn't just look beautiful today, but stays protected for decades.</p>
-                
-                <div class="about-features">
-                    <div class="feature-box">
-                        <h4>Certified Quality</h4>
+    <!-- COMBINED ABOUT & WHY SECTION -->
+    <section class="about-why-section" id="about">
+        <div class="about-why-header">
+            <h2>Why Choose PondyPainters?</h2>
+            <p>25 years of excellence in coastal preservation. We combine premium materials, expert craftsmanship, and coastal expertise to transform your buildings.</p>
+        </div>
+
+        <div class="about-why-grid">
+            <div class="about-why-content">
+                <h3>Our Expertise</h3>
+                <div class="about-why-features">
+                    <div class="about-why-feature">
+                        <div class="about-why-feature-icon">✓</div>
+                        <div>
+                            <h4>25+ Years Experience</h4>
+                            <p>Proven track record with 300+ completed projects in Pondicherry.</p>
+                        </div>
                     </div>
-                    <div class="feature-box">
-                        <h4>On-Time Delivery</h4>
+                    <div class="about-why-feature">
+                        <div class="about-why-feature-icon">✓</div>
+                        <div>
+                            <h4>Premium Materials</h4>
+                            <p>Using Asian Paints, Berger, and specialized waterproofing agents.</p>
+                        </div>
+                    </div>
+                    <div class="about-why-feature">
+                        <div class="about-why-feature-icon">✓</div>
+                        <div>
+                            <h4>Affordable Pricing</h4>
+                            <p>Transparent quotes with no hidden costs. Value for every rupee spent.</p>
+                        </div>
+                    </div>
+                    <div class="about-why-feature">
+                        <div class="about-why-feature-icon">✓</div>
+                        <div>
+                            <h4>Long Lasting Finish</h4>
+                            <p>Designed to withstand salt-air and heavy monsoons.</p>
+                        </div>
+                    </div>
+                    <div class="about-why-feature">
+                        <div class="about-why-feature-icon">✓</div>
+                        <div>
+                            <h4>On-Time Completion</h4>
+                            <p>Strict adherence to project timelines and schedules.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="about-image">
-                <img src="https://www.figma.com/api/mcp/asset/553e3c96-55e2-458d-8c66-24d3948bb2d0" alt="About PondyPainters">
-                <div class="about-badge">
-                    <div class="badge-content">
-                        <div class="badge-icon">👥</div>
+            <div class="images-column">
+                <div class="image-card">
+                    <img src="https://www.figma.com/api/mcp/asset/553e3c96-55e2-458d-8c66-24d3948bb2d0" alt="About PondyPainters">
+                    <div class="badge">
+                        <div class="badge-icon"><i class="fas fa-heart"></i></div>
                         <div class="badge-text">
                             <h4>Trusted by 1000+ Owners</h4>
                             <p>Across Pondicherry & Auroville</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- WHY CHOOSE US -->
-    <section class="why-choose" id="why">
-        <div class="why-grid">
-            <div class="why-content">
-                <h2>Why PondyPainters?</h2>
-                
-                <div class="why-features">
-                    <div class="why-feature">
-                        <div class="why-feature-icon">✓</div>
-                        <div>
-                            <h4>Achievement Award By AsianPaints</h4>
-                            <p>Trained professionals with decades of specific site experience across the region.</p>
-                        </div>
+                <div class="image-card">
+                    <img src="https://res.cloudinary.com/dmm2v7jvo/image/upload/WhatsApp_Image_2026-05-30_at_6.48.12_PM_1_ka8ear" alt="Quality Promise">
+                    <div class="image-card-overlay">
+                        <div class="image-card-quote">"Quality is the only thing that lasts."</div>
                     </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">✓</div>
-                        <div>
-                            <h4>Premium Materials</h4>
-                            <p>Exclusively using Asian Paints, Berger, and specialized waterproofing agents.</p>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">✓</div>
-                        <div>
-                            <h4>Affordable Pricing</h4>
-                            <p>Transparent quotes with no hidden costs. Value for every rupee spent.</p>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">✓</div>
-                        <div>
-                            <h4>Long Lasting Finish</h4>
-                            <p>Our coatings are designed to withstand salt-air and heavy monsoons.</p>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">✓</div>
-                        <div>
-                            <h4>On-Time Completion</h4>
-                            <p>Strict adherence to project timelines to respect your busy schedule.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="why-image">
-                <img src="https://res.cloudinary.com/dmm2v7jvo/image/upload/WhatsApp_Image_2026-05-30_at_6.48.12_PM_1_ka8ear" alt="Why Choose Us">
-                <div class="why-overlay">
-                    <div class="why-quote">"Quality is the only thing that lasts."</div>
                 </div>
             </div>
         </div>
@@ -1699,12 +1871,8 @@
             </div>
 
             <div class="carousel-nav">
-                <button class="carousel-button" id="prevBtn" onclick="scrollCarousel(-1)" title="Previous">
-                    ←
-                </button>
-                <button class="carousel-button" id="nextBtn" onclick="scrollCarousel(1)" title="Next">
-                    →
-                </button>
+                <button class="carousel-button" id="prevBtn" onclick="scrollCarousel(-1)">←</button>
+                <button class="carousel-button" id="nextBtn" onclick="scrollCarousel(1)">→</button>
             </div>
         </div>
 
@@ -1722,28 +1890,20 @@
 
         <div class="testimonials-grid">
             <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span>⭐⭐⭐⭐⭐</span>
-                </div>
-                <div class="testimonial-text">
-                    "PondyPainters did an amazing job on our heritage home. The attention to detail and choice of colors was perfect for the French Quarter aesthetic."
-                </div>
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <div class="testimonial-text">"Amazing work on our heritage home. Perfect attention to detail!"</div>
                 <div class="testimonial-author">
                     <div class="author-avatar">SJ</div>
                     <div class="author-info">
                         <h4>Suresh Jayaram</h4>
-                        <p>Villinuar, pondicherry</p>
+                        <p>Villinuar, Pondy</p>
                     </div>
                 </div>
             </div>
 
             <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span>⭐⭐⭐⭐⭐</span>
-                </div>
-                <div class="testimonial-text">
-                    "The waterproofing solution they provided for our terrace has been flawless through two monsoons. Highly recommend their expert team."
-                </div>
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <div class="testimonial-text">"Waterproofing solution flawless through monsoons. Highly recommended!"</div>
                 <div class="testimonial-author">
                     <div class="author-avatar">MK</div>
                     <div class="author-info">
@@ -1754,17 +1914,13 @@
             </div>
 
             <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span>⭐⭐⭐⭐⭐</span>
-                </div>
-                <div class="testimonial-text">
-                    "Very professional approach. They finished the commercial complex painting ahead of schedule with zero mess. Very impressed with the cleanup."
-                </div>
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <div class="testimonial-text">"Professional and ahead of schedule. Zero mess, very impressed!"</div>
                 <div class="testimonial-author">
                     <div class="author-avatar">RV</div>
                     <div class="author-info">
                         <h4>Rajesh V.</h4>
-                        <p>mutharilarpet, pondy</p>
+                        <p>Mutharilarpet, Pondy</p>
                     </div>
                 </div>
             </div>
@@ -1776,22 +1932,22 @@
         <div class="contact-grid">
             <div class="contact-left">
                 <h2>Ready to Transform Your Building?</h2>
-                <p class="contact-description">Contact our experts today for a free quote or book your ₹99 detailed site audit.</p>
+                <p class="contact-description">Contact us today for a free quote or book your ₹99 detailed site audit.</p>
                 
                 <div class="contact-links">
                     <a href="tel:+919843926867" class="contact-link contact-phone">
-                        <div class="contact-icon">📞</div>
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <div>
-                            <h3>Call Us Anytime</h3>
+                            <h3>Call Us</h3>
                             <div class="contact-value">+91 9843926867</div>
                         </div>
                     </a>
 
                     <a href="https://wa.me/919843926867" class="contact-link contact-whatsapp">
-                        <div class="contact-icon">💬</div>
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
                         <div>
-                            <h3>WhatsApp Support</h3>
-                            <div class="contact-value">Chat with our Experts</div>
+                            <h3>WhatsApp</h3>
+                            <div class="contact-value">Chat with us</div>
                         </div>
                     </a>
                 </div>
@@ -1814,7 +1970,7 @@
                     <div class="form-group">
                         <div class="form-field full">
                             <label class="form-label">Location (Area in Pondy)</label>
-                            <input type="text" class="form-input" id="location" placeholder="e.g., White Town, Lawspet" required>
+                            <input type="text" class="form-input" id="location" placeholder="e.g., White Town" required>
                         </div>
                     </div>
 
@@ -1853,7 +2009,6 @@
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
-                <a href="#why">Services</a>
                 <a href="#projects">Projects</a>
                 <a href="#testimonials">Reviews</a>
                 <a href="#contact">Contact</a>
@@ -1867,11 +2022,11 @@
     <!-- SIDE BUTTONS -->
     <div class="side-buttons">
         <button class="side-button btn-whatsapp" onclick="window.open('https://wa.me/919843926867', '_blank');">
-            <span>💬</span>
+            <i class="fab fa-whatsapp"></i>
             <span class="side-tooltip">WhatsApp Us</span>
         </button>
         <button class="side-button btn-call" onclick="window.open('tel:+919843926867');">
-            <span>📞</span>
+            <i class="fas fa-phone"></i>
             <span class="side-tooltip">Call Now</span>
         </button>
     </div>
@@ -1881,8 +2036,6 @@
 
         // ==================== CAROUSEL LOGIC ====================
         let currentCarouselIndex = 0;
-        let touchStartX = 0;
-        let touchEndX = 0;
         const carouselItems = document.querySelectorAll('.carousel-item');
         const totalCarouselItems = carouselItems.length;
         const carouselContainer = document.getElementById('carouselContainer');
@@ -1916,10 +2069,8 @@
 
         function scrollCarousel(direction) {
             currentCarouselIndex += direction;
-
             if (currentCarouselIndex < 0) currentCarouselIndex = 0;
             if (currentCarouselIndex >= totalCarouselItems) currentCarouselIndex = totalCarouselItems - 1;
-
             updateCarousel();
         }
 
@@ -1928,28 +2079,23 @@
             updateCarousel();
         }
 
-        carouselContainer.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, false);
-
-        carouselContainer.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, false);
-
-        function handleSwipe() {
-            if (touchStartX - touchEndX > 50) {
-                scrollCarousel(1);
-            }
-            if (touchEndX - touchStartX > 50) {
-                scrollCarousel(-1);
-            }
-        }
-
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') scrollCarousel(-1);
             if (e.key === 'ArrowRight') scrollCarousel(1);
         });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        carouselContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) scrollCarousel(1);
+            else if (touchEndX - touchStartX > 50) scrollCarousel(-1);
+        }, false);
 
         window.addEventListener('load', () => {
             initCarouselIndicators();
@@ -2009,7 +2155,6 @@
             const messageEl = document.getElementById('successMessage');
             messageEl.textContent = message;
             messageEl.style.display = 'block';
-            
             setTimeout(() => {
                 messageEl.style.display = 'none';
             }, 5000);
@@ -2019,24 +2164,23 @@
             const messageEl = document.getElementById('errorMessage');
             messageEl.textContent = message;
             messageEl.style.display = 'block';
-            
             setTimeout(() => {
                 messageEl.style.display = 'none';
             }, 5000);
         }
 
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href !== '#' && document.querySelector(href)) {
                     e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    document.querySelector(href).scrollIntoView({behavior: 'smooth'});
                 }
             });
         });
 
+        // Update active nav link
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-links a');
